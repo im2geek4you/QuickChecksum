@@ -51,6 +51,12 @@
     <Compile Include="Form_Loading.Designer.cs">
       <DependentUpon>Form_Loading.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_MultiFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_MultiFiles.Designer.cs">
+      <DependentUpon>Form_MultiFiles.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_SingleFile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +67,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form_Loading.resx">
       <DependentUpon>Form_Loading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_MultiFiles.resx">
+      <DependentUpon>Form_MultiFiles.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_SingleFile.resx">
       <DependentUpon>Form_SingleFile.cs</DependentUpon>

@@ -36,21 +36,6 @@ namespace Quick_Checksum
         }
 
 
-        private void Form_Loading_Load(object sender, EventArgs e)
-        {
-            
-            string[] args = Environment.GetCommandLineArgs();
-            if (args.Length > 1)
-            {
-                label_Files.Text = "File: " + args[1];
-                filename = args[1];
-
-                backgroundWorkerChecksum.RunWorkerAsync();
-
-            }
-
-        }
-
         private void backgroundWorkerChecksum_DoWork(object sender, DoWorkEventArgs e)
         {
             backgroundWorkerChecksum.ReportProgress(99);
@@ -95,6 +80,31 @@ namespace Quick_Checksum
         private void labelClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Form_Loading_Shown(object sender, EventArgs e)
+        {
+            string[] args = Environment.GetCommandLineArgs();
+            if(args.Length == 1)
+            {
+                MessageBox.Show("No item selected");
+                this.Close();
+            }
+            else if (args.Length == 2)
+            {
+                label_Files.Text = "File: " + args[1];
+                filename = args[1];
+
+                backgroundWorkerChecksum.RunWorkerAsync();
+
+            }
+            else if (args.Length > 2)
+            {
+                this.Hide();
+                Form_MultiFiles frmMultiFile = new Form_MultiFiles(args);
+                frmMultiFile.Closed += (s, args_) => this.Close();
+                frmMultiFile.Show();
+            }
         }
     }
 }

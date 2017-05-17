@@ -77,7 +77,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form_Loading";
-            this.Load += new System.EventHandler(this.Form_Loading_Load);
+            this.Shown += new System.EventHandler(this.Form_Loading_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
