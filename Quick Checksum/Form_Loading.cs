@@ -48,12 +48,12 @@ namespace Quick_Checksum
                 {
                     md5sum = BitConverter.ToString(md5.ComputeHash(stream)).Replace("-", string.Empty);
                 }
-
+                stream.Position = 0;
                 using (var sha1 = SHA1.Create())
                 {
                     sha1sum = BitConverter.ToString(sha1.ComputeHash(stream)).Replace("-", string.Empty);
                 }
-                
+                stream.Position = 0;
                 using (var sha256 = SHA256.Create())
                 {
                     sha256sum = BitConverter.ToString(sha256.ComputeHash(stream)).Replace("-", string.Empty);

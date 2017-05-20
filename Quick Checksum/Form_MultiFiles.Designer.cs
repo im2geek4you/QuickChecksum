@@ -61,7 +61,7 @@
             this.dataGridView_Files.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dataGridView_Files.RowHeadersVisible = false;
             this.dataGridView_Files.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView_Files.Size = new System.Drawing.Size(1151, 438);
+            this.dataGridView_Files.Size = new System.Drawing.Size(1264, 438);
             this.dataGridView_Files.TabIndex = 0;
             // 
             // Column_FILENAME
@@ -78,33 +78,34 @@
             this.Column_PROGRESS.HeaderText = "PROGRESS";
             this.Column_PROGRESS.Name = "Column_PROGRESS";
             this.Column_PROGRESS.ReadOnly = true;
+            this.Column_PROGRESS.Width = 80;
             // 
             // Column_MD5
             // 
             this.Column_MD5.HeaderText = "MD5 SUM";
             this.Column_MD5.Name = "Column_MD5";
             this.Column_MD5.ReadOnly = true;
-            this.Column_MD5.Width = 200;
+            this.Column_MD5.Width = 225;
             // 
             // Column_SHA1
             // 
             this.Column_SHA1.HeaderText = "SHA1 SUM";
             this.Column_SHA1.Name = "Column_SHA1";
             this.Column_SHA1.ReadOnly = true;
-            this.Column_SHA1.Width = 250;
+            this.Column_SHA1.Width = 275;
             // 
             // Column_SHA256
             // 
             this.Column_SHA256.HeaderText = "SHA256 SUM";
             this.Column_SHA256.Name = "Column_SHA256";
             this.Column_SHA256.ReadOnly = true;
-            this.Column_SHA256.Width = 300;
+            this.Column_SHA256.Width = 420;
             // 
             // Form_MultiFiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1175, 462);
+            this.ClientSize = new System.Drawing.Size(1288, 462);
             this.Controls.Add(this.dataGridView_Files);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form_MultiFiles";

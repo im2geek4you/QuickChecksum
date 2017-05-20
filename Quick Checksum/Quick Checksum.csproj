@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalcSUM.cs" />
     <Compile Include="Form_Loading.cs">
       <SubType>Form</SubType>
     </Compile>
