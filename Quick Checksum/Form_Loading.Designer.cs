@@ -32,7 +32,6 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label_Files = new System.Windows.Forms.Label();
-            this.backgroundWorkerChecksum = new System.ComponentModel.BackgroundWorker();
             this.labelClose = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -52,18 +51,11 @@
             resources.ApplyResources(this.label_Files, "label_Files");
             this.label_Files.Name = "label_Files";
             // 
-            // backgroundWorkerChecksum
-            // 
-            this.backgroundWorkerChecksum.WorkerReportsProgress = true;
-            this.backgroundWorkerChecksum.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerChecksum_DoWork);
-            this.backgroundWorkerChecksum.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorkerChecksum_ProgressChanged);
-            this.backgroundWorkerChecksum.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerChecksum_RunWorkerCompleted);
-            // 
             // labelClose
             // 
             resources.ApplyResources(this.labelClose, "labelClose");
             this.labelClose.Name = "labelClose";
-            this.labelClose.Click += new System.EventHandler(this.labelClose_Click);
+            this.labelClose.Click += new System.EventHandler(this.LabelClose_Click);
             // 
             // Form_Loading
             // 
@@ -88,7 +80,6 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label_Files;
-        private System.ComponentModel.BackgroundWorker backgroundWorkerChecksum;
         private System.Windows.Forms.Label labelClose;
     }
 }

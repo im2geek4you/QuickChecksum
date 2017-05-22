@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Fatcow-Farm-Fresh-Sum.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -58,12 +61,8 @@
     <Compile Include="Form_MultiFiles.Designer.cs">
       <DependentUpon>Form_MultiFiles.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_SingleFile.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_SingleFile.Designer.cs">
-      <DependentUpon>Form_SingleFile.cs</DependentUpon>
-    </Compile>
+    <Compile Include="GlobalArgs.cs" />
+    <Compile Include="NativeMethods.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form_Loading.resx">
@@ -71,9 +70,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_MultiFiles.resx">
       <DependentUpon>Form_MultiFiles.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_SingleFile.resx">
-      <DependentUpon>Form_SingleFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -96,6 +92,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Fatcow-Farm-Fresh-Sum.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
