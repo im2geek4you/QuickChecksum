@@ -1,2 +1,2 @@
 # QuickChecksum
-Checksum tool for windows
+Checksum tool for windows. Currently under development...
