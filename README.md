@@ -9,4 +9,4 @@ Screenshot
 
 Download
 
-![setup](https://github.com/im2geek4you/QuickChecksum/files/1033427/Setup.zip)
+[![setup](https://github.com/im2geek4you/QuickChecksum/blob/master/Quick%20Checksum/Resources/Fatcow-Farm-Fresh-Sum.ico)](https://github.com/im2geek4you/QuickChecksum/files/1033427/Setup.zip)
