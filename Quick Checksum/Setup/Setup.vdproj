@@ -83,6 +83,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
     }
@@ -322,6 +330,14 @@
                                         }
                                         "Values"
                                         {
+                                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_E5ADAD0EF5CE476FBBEEC5562E37C939"
+                                            {
+                                            "Name" = "8:icon"
+                                            "Condition" = "8:"
+                                            "Transitive" = "11:FALSE"
+                                            "ValueTypes" = "3:1"
+                                            "Value" = "8:[TARGETDIR]Quick Checksum.exe"
+                                            }
                                         }
                                     }
                                 }
@@ -755,7 +771,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_6EBC485BF63646D5BDEEACBBA51A55FA"
             {
-            "SourcePath" = "8:..\\obj\\Debug\\Quick Checksum.exe"
+            "SourcePath" = "8:..\\obj\\Release\\Quick Checksum.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_12B3879E002D4AFEB93B8F5E116E4CD3"
