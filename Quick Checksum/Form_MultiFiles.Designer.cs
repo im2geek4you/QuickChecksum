@@ -55,7 +55,6 @@
             this.Column_SHA256});
             this.dataGridView_Files.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dataGridView_Files.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView_Files.MultiSelect = false;
             this.dataGridView_Files.Name = "dataGridView_Files";
             this.dataGridView_Files.ReadOnly = true;
             this.dataGridView_Files.RightToLeft = System.Windows.Forms.RightToLeft.No;
