@@ -15,7 +15,6 @@
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
-[Rr]elease/
 [Rr]eleases/
 x64/
 x86/
@@ -286,3 +285,5 @@ __pycache__/
 *.btm.cs
 *.odx.cs
 *.xsd.cs
+/Quick Checksum/Setup/Release/setup.exe
+*.exe
