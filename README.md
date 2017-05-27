@@ -5,7 +5,7 @@ You can leave Quick Checksum window open and go right click another file on anot
 This will help comparing checksums of files in different folders.
 
 Screenshot
-![alt text](https://cloud.githubusercontent.com/assets/13609585/26519926/e193daaa-42c0-11e7-9a7c-14bf2b93dd45.png)
+![Quick Checksum](https://cloud.githubusercontent.com/assets/13609585/26519926/e193daaa-42c0-11e7-9a7c-14bf2b93dd45.png)
 
 Setup Download
-![alt text](https://github.com/im2geek4you/QuickChecksum/files/1033427/Setup.zip)
+![setup.zip](https://github.com/im2geek4you/QuickChecksum/files/1033427/Setup.zip)
