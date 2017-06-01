@@ -34,11 +34,13 @@ namespace Quick_Checksum
                     }
 
                     stream.Position = 0;
+                    _dgvRow.Cells["Column_PROGRESS"].Value = "33%";
                     using (var sha1 = SHA1.Create())
                     {
                         _dgvRow.Cells["Column_SHA1"].Value = BitConverter.ToString(sha1.ComputeHash(stream)).Replace("-", string.Empty);
                     }
                     stream.Position = 0;
+                    _dgvRow.Cells["Column_PROGRESS"].Value = "66%";
                     using (var sha256 = SHA256.Create())
                     {
                         _dgvRow.Cells["Column_SHA256"].Value = BitConverter.ToString(sha256.ComputeHash(stream)).Replace("-", string.Empty);
