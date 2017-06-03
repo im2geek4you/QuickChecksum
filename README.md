@@ -7,4 +7,4 @@ This will help comparing checksums of files in different folders.
 ## Screenshot
 ![Quick Checksum](https://cloud.githubusercontent.com/assets/13609585/26519926/e193daaa-42c0-11e7-9a7c-14bf2b93dd45.png)
 
-## Download setup [![setup](https://github.com/im2geek4you/QuickChecksum/blob/master/Quick%20Checksum/Resources/Fatcow-Farm-Fresh-Sum.ico)](https://github.com/im2geek4you/QuickChecksum/files/1033473/Setup.zip)
+## Download setup [![setup](https://github.com/im2geek4you/QuickChecksum/blob/master/Quick%20Checksum/Resources/Fatcow-Farm-Fresh-Sum.ico)](https://github.com/im2geek4you/QuickChecksum/blob/master/Quick%20Checksum/Setup/Release/Setup.zip)
