@@ -338,7 +338,7 @@ namespace Quick_Checksum
                     {
                         if (row.Cells[Column_MD5.Name].Value.ToString() == dataGridView_Files.Rows[i].Cells[Column_MD5.Name].Value.ToString())
                         {
-                            System.Drawing.Color matchColor = GetRandomColor();
+                            System.Drawing.Color matchColor = GetRandomColor(row.Index);
                             row.DefaultCellStyle.BackColor = matchColor;
                             dataGridView_Files.Rows[i].DefaultCellStyle.BackColor = matchColor;
                         }
@@ -348,9 +348,9 @@ namespace Quick_Checksum
             }
         }
 
-        public System.Drawing.Color GetRandomColor()
+        public System.Drawing.Color GetRandomColor(int seed)
         {
-            Random randomGen = new Random();
+            Random randomGen = new Random(seed);
             System.Drawing.KnownColor[] names = (System.Drawing.KnownColor[])Enum.GetValues(typeof(System.Drawing.KnownColor));
             System.Drawing.KnownColor randomColorName = names[randomGen.Next(names.Length)];
             System.Drawing.Color randomColor = System.Drawing.Color.FromKnownColor(randomColorName);
