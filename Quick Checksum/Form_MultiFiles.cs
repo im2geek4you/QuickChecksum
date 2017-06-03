@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -79,6 +80,281 @@ namespace Quick_Checksum
             CalcSUMArray[0] = f;
             ThreadPool.QueueUserWorkItem(f.ThreadPoolCallback, index);
 
+        }
+
+        private void MD5copyToClipboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ToolStripMenuItem item = (ToolStripMenuItem)sender;
+                if (item != null)
+                {
+                    if (item.Text == "Copy to clipboard")
+                    {
+                        Clipboard.Clear();
+                        string values = string.Empty;
+                        for (int i = dataGridView_Files.SelectedRows.Count - 1; i >= 0; i--)
+                        {
+                            var selectedRow = dataGridView_Files.SelectedRows[i];
+                            if (i == 0)
+                            {
+                                values = values + selectedRow.Cells[Column_MD5.Name].Value.ToString();
+                            }
+                            else
+                            {
+                                values = values + selectedRow.Cells[Column_MD5.Name].Value.ToString() + Environment.NewLine;
+                            }
+                        }
+                        Clipboard.SetText(values);
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void SHA1copyToClipboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ToolStripMenuItem item = (ToolStripMenuItem)sender;
+                if (item != null)
+                {
+                    if (item.Text == "Copy to clipboard")
+                    {
+                        Clipboard.Clear();
+                        string values = string.Empty;
+                        for (int i = dataGridView_Files.SelectedRows.Count - 1; i >= 0; i--)
+                        {
+                            var selectedRow = dataGridView_Files.SelectedRows[i];
+                            if (i == 0)
+                            {
+                                values = values + selectedRow.Cells[Column_SHA1.Name].Value.ToString();
+                            }
+                            else
+                            {
+                                values = values + selectedRow.Cells[Column_SHA1.Name].Value.ToString() + Environment.NewLine;
+                            }
+                        }
+                        Clipboard.SetText(values);
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void SHA256copyToClipboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ToolStripMenuItem item = (ToolStripMenuItem)sender;
+                if (item != null)
+                {
+                    if (item.Text == "Copy to clipboard")
+                    {
+                        Clipboard.Clear();
+                        string values = string.Empty;
+                        for (int i = dataGridView_Files.SelectedRows.Count - 1; i >= 0; i--)
+                        {
+                            var selectedRow = dataGridView_Files.SelectedRows[i];
+                            if (i==0)
+                            {
+                                values = values + selectedRow.Cells[Column_SHA256.Name].Value.ToString();
+                            }
+                            else {
+                                values = values + selectedRow.Cells[Column_SHA256.Name].Value.ToString() + Environment.NewLine;
+                            }
+                        }
+                        Clipboard.SetText(values);
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error " + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void MD5compareWithClipboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ToolStripMenuItem item = (ToolStripMenuItem)sender;
+                if (item != null)
+                {
+                    if (item.Text == "Compare with clipboard")
+                    {
+                        if (dataGridView_Files.SelectedRows.Count ==1)
+                        {
+                            DataGridViewRow selectedRow = dataGridView_Files.SelectedRows[0];
+                            if (Clipboard.GetText() == selectedRow.Cells[Column_MD5.Name].Value.ToString())
+                            {
+                                MessageBox.Show("Clipboard:\t " + Clipboard.GetText() + "\nTable MD5:\t " + selectedRow.Cells[Column_MD5.Name].Value.ToString(), "Match!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                        else if (dataGridView_Files.SelectedRows.Count >= 1)
+                        {
+                            MessageBox.Show("Only one item can be compared at a time!", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error " + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void SHA1compareWithClipboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ToolStripMenuItem item = (ToolStripMenuItem)sender;
+                if (item != null)
+                {
+                    if (item.Text == "Compare with clipboard")
+                    {
+                        if (dataGridView_Files.SelectedRows.Count == 1)
+                        {
+                            DataGridViewRow selectedRow = dataGridView_Files.SelectedRows[0];
+                            if (Clipboard.GetText() == selectedRow.Cells[Column_SHA1.Name].Value.ToString())
+                            {
+                                MessageBox.Show("Clipboard:\t " + Clipboard.GetText() + "\nTable SHA1:\t " + selectedRow.Cells[Column_SHA1.Name].Value.ToString(), "Match!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                        else if (dataGridView_Files.SelectedRows.Count >= 1)
+                        {
+                            MessageBox.Show("Only one item can be compared at a time!", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error " + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void SHA256compareWithClipboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ToolStripMenuItem item = (ToolStripMenuItem)sender;
+                if (item != null)
+                {
+                    if (item.Text == "Compare with clipboard")
+                    {
+                        if (dataGridView_Files.SelectedRows.Count == 1)
+                        {
+                            DataGridViewRow selectedRow = dataGridView_Files.SelectedRows[0];
+                            if (Clipboard.GetText() == selectedRow.Cells[Column_SHA256.Name].Value.ToString())
+                            {
+                                MessageBox.Show("Clipboard:\t " + Clipboard.GetText() + "\nTable SHA256:\t " + selectedRow.Cells[Column_SHA256.Name].Value.ToString(), "Match!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                        else if (dataGridView_Files.SelectedRows.Count >= 1)
+                        {
+                            MessageBox.Show("Only one item can be compared at a time!", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error " + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void toolStripButtonAbout_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Application.ProductName +" v"+ Application.ProductVersion + "\nDeveloped by Carlos Santos", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void toolStripButtonClearTable_Click(object sender, EventArgs e)
+        {
+            dataGridView_Files.Rows.Clear();
+        }
+
+        private void deleteThisFileFromDiskToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ToolStripMenuItem item = (ToolStripMenuItem)sender;
+                if (item != null)
+                {
+                    if (dataGridView_Files.SelectedRows.Count >= 1)
+                    {
+                        if (MessageBox.Show("Do you want to delete selected file(s) from disk?", Application.ProductName, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                        {
+                            try
+                            {
+                                foreach (DataGridViewRow row in dataGridView_Files.SelectedRows)
+                                {
+
+                                    File.Delete(row.Cells[Column_FILENAME.Name].Value.ToString());
+                                    dataGridView_Files.Rows.Remove(row);
+
+                                }
+                                MessageBox.Show("Delete successful", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            catch (Exception ex)
+                            {
+
+                                MessageBox.Show("Error " + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error " + ex.Message, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void toolStripButtonFindDuplicates_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView_Files.Rows)
+            {
+                if (dataGridView_Files.Rows.Count >= 1)
+                {
+                    for (int i = row.Index + 1; i <= dataGridView_Files.Rows.Count - 1; i++)
+                    {
+                        if (row.Cells[Column_MD5.Name].Value.ToString() == dataGridView_Files.Rows[i].Cells[Column_MD5.Name].Value.ToString())
+                        {
+                            System.Drawing.Color matchColor = GetRandomColor();
+                            row.DefaultCellStyle.BackColor = matchColor;
+                            dataGridView_Files.Rows[i].DefaultCellStyle.BackColor = matchColor;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        public System.Drawing.Color GetRandomColor()
+        {
+            Random randomGen = new Random();
+            System.Drawing.KnownColor[] names = (System.Drawing.KnownColor[])Enum.GetValues(typeof(System.Drawing.KnownColor));
+            System.Drawing.KnownColor randomColorName = names[randomGen.Next(names.Length)];
+            System.Drawing.Color randomColor = System.Drawing.Color.FromKnownColor(randomColorName);
+            return randomColor;
         }
     }
 }
